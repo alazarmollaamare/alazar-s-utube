@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alazar'utube</title>
+    <style>
+        .main{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            row-gap: 35px;
+            column-gap: 15px;
+            padding-top: 28px;
+            background-color: rgb(241, 241, 241);
+            padding-left: 30px;
+            padding-right: 25px;
+        }
+        .div11{
+            position: relative;
+        }
+        .div111{
+            position: absolute;
+            bottom: 12px;
+            right: 8px;
+            background-color: black;
+            color: white;
+        }
+        .img1{
+            width: 100%;
+        }
+        .div12{
+            display: grid;
+            grid-template-columns: 50px 1fr;
+        }
+        .pr1{
+            width: 100%;
+        }
+        .p1{
+                font-family: arial;
+                font-weight: bold;
+                font-size: 16px;
+                margin-top: 10px;
+                margin-bottom: 0px;
+            }
+            .p2{
+                font-family: arial;
+                font-size: 14px;
+                color: rgb(29, 27, 27);
+                margin-top: 11px;
+                margin-bottom: 0px;
+            }
+            .p3{
+                font-family: arial;
+                font-size: 14px;
+                color: rgb(29, 27, 27);
+                margin-top: 2px;
+                margin-bottom: 0px;
+            }
+        .pr1{
+            border-radius: 40px;
+            width: 45px;
+        }
+        .header{
+            height: 60px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: 100;
+            background-color: white;
+            border-bottom: 1px solid rgb(209, 208, 208);
+            margin-bottom: 0;
+        }
+        .h1{
+            display: flex;
+        }
+        .h2{
+            display: flex;
+            flex: 1;
+            max-width: 470px;
+            align-items: center;
+        }
+        .h3{
+            display: flex;
+            align-items: center;
+            margin-right: 30px;
+        }
+        .utube{
+            height: 20px;
+            margin-right: 40px;
+        }
+        .ham{
+            height: 24px;
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+        .up{
+            height: 24px;
+            margin-left: 24px;
+        }
+        .app{
+            height: 24px;
+            margin-left: 24px;
+        }
+        .not{
+            height: 24px;
+            margin-left: 24px; 
+        }
+        .pr2{
+            height: 35px;
+            margin-left: 24px;
+        }
+        .bar{
+            height: 40px;
+            flex: 1;
+            width: 0;
+            min-width:0 ;
+            padding-left: 12px;
+            padding-left: 12px;
+            font-size: 16px;
+            border: 1px solid #cccccc;
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+        }
+        .voice{
+            height: 24px;
+            padding-top: 10px;
+            padding-left: 10px;
+        }
+        .body{
+            padding-top: 54px;
+            padding-left: 75px;
+        }
+        .search{
+            height: 24px;
+            padding-top: 9p;
+            margin-left: 17p;
+
+        }
+        .vo{
+            background-color: rgb(243, 243, 243);
+            margin-left: 4px;
+            width: 45px;
+            height: 45px;
+            border-radius: 25px;
+            position: relative;
+            cursor: pointer;
+        }
+        .vo .op{
+            font-size: 12px;
+            pointer-events:none ;
+            padding-left: 10px;
+            padding-bottom: 5px;
+            padding-right: 10px;
+            padding-top: 5px;background-color: rgb(90, 88, 88);
+            color: white;
+            width:110px;
+            position: absolute;
+            bottom: -35px;
+            left: -35px;
+            opacity: 0;            
+        }
+        .vo:hover .op{
+            opacity: 1;
+            transition-duration: 0.2s;
+        }
+        .se{
+            display: flex;
+            background-color: #ebebeb;
+            height: 44.5px;
+            border-color: #cccccc;
+            border-radius: 1px;
+            border-width: 1px;
+            border-style: solid;
+            margin-left: -2px;
+            justify-content: center;
+            align-items: center;
+            width: 65px;
+            position: relative;
+            cursor: pointer;
+           
+        }
+        .gera{
+    display: flex;
+    position: fixed;
+    top: 53px;
+    left: 0px;
+    bottom: 0px;
+    flex-direction: column;
+    padding-top: 25px;
+    background-color: white;
+    z-index: 200;
+    right: 1220px;
+
+}
+.gera-link:hover{
+    background-color: rgba(133, 111, 111, 0.527);
+    cursor: pointer;
+    margin-bottom: 2px;
+    
+}
+.gera-link img:hover{
+    width: 30px;
+    transition-duration: 0.3s;
+}
+
+.pa3{
+    padding-top: 0px;
+    color: #200909;
+    font-size: 14px;
+
+}
+.gera-link{
+    display: flex;
+    flex-direction: column;
+    height: 76px;
+    align-items: center;
+}
+.gera-link img{
+    width: 24px;
+    
+
+}
+.button{
+    position: relative;
+}
+.nof{
+    position: relative;
+}
+.of{
+    position: absolute;
+    font-size: 10px;
+    background-color: red;
+    color: white;
+    padding: 3px 6px 3px 6px;
+    border-radius: 25px;
+    top: 14px;
+    right: 85px;
+}
+.se .ano{
+    font-size: 12px;
+    background-color: rgb(90, 88, 88);
+    color: white; 
+    position: absolute;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    bottom: -35px;
+    opacity: 0;
+    pointer-events: none;
+}
+.se:hover .ano{
+    opacity: 1;
+    transition-duration: 0.2s;
+}
+@media (max-width: 850px) {
+    .main{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width: 1000px) {
+    .main{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    @media (max-width: 650px) {
+    .main{
+        grid-template-columns: 1fr;
+    }
+}
+}
+ .body .p {
+    font-family: arial;
+}
+        
+    </style>
+</head>
+<body class="body">
+    <div class="header">
+        <div class="h1">
+            <img class="ham" src="butins/hamburger-menu.svg" alt="">
+            <img class="utube" src="butins/youtube-logo.svg" alt="">
+        </div>
+        <div class="h2">
+            <input class="bar" type="text" placeholder ="Search">
+            <button class="se">
+                <img class="search" src="butins/search.svg" alt="">
+                <div class="ano">
+                    search
+                </div>
+            </button>
+            <div class="vo">
+                <img class="voice" src="butins/voice-search-icon.svg" alt="">
+                <div class="op">
+                    search with your voice
+                </div>
+            </div>
+        </div>
+        <div class="h3">
+            <img class="up" src="butins/upload.svg" alt="">
+            <img class="app" src="butins/youtube-apps.svg" alt="">
+            <img class="not" src="butins/notifications.svg" alt="">
+            <div nof>
+                <img class="pr2" src="butins/my-channel.jpeg" alt="">
+                <div class="of">
+                    3
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gera">
+       <div class="gera-link">
+        <img src="butins/home.svg" alt="">
+        <div class="pa3">
+            home
+        </div>
+       </div>
+       <div class="gera-link">
+        <img src="butins/explore.svg" alt="">
+        <div class="pa3">
+            explore
+        </div>
+       </div>
+       <div class="gera-link">
+        <img src="butins/subscriptions.svg" alt="">
+        <div class="pa3">
+            subscriptions
+        </div>
+       </div>
+       <div class="gera-link">
+        <img src="butins/originals.svg" alt="">
+        <div class="pa3">
+            originals
+        </div>
+       </div>
+       <div class="gera-link">
+        <img src="butins/youtube-music.svg" alt="">
+        <div class="pa3">
+            youtube music
+        </div>
+       </div>
+       <div class="gera-link">
+        <img src="butins/library.svg" alt="">
+        <div class="pa3">
+            library
+        </div>
+       </div>
+    </div>
+    <div class="main">
+        <div class="div1">
+            <div class="div11">
+                <img class="img1" src="thumbnail-a.webp" alt="">
+                <div class="div111">
+                    14:20
+                </div>
+            </div>
+            <div class="div12">
+                <div class="div121">
+                    <img class="pr1" src="thumbnails/channel-1.jpeg" alt="">
+                </div>
+                <div class="div122">
+                    <p class="p1">
+                        Talking Tech and AI with CEO Sundar pichai
+                    </p>
+                    <p class="p2">
+                        Marques brownlee
+                    </p>
+                    <p class="p3">
+                        3.4M views · 6 months ago
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="div1">
+            <div class="div11">
+                <img class="img1" src="thumbnails/thumbnail-2.webp" alt="">
+                <div class="div111">
+                    14:20
+                </div> 
+            </div>
+            <div class="div12">
+                <div class="div121">
+                    <img class="pr1" src="thumbnails/channel-2.jpeg" alt="">
+                    <div class="div111">
+                        14:20
+                    </div>
+                </div>
+                <div class="div122">
+                    <p class="p1">
+                        Try not to laugh Challange #9
+                    </p>
+                    <p class="p2">
+                        Markiplier
+                    </p>
+                    <p class="p3">
+                        14M views · 4 years ago
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="div1">
+            <div class="div11">
+                <img class="img1" src="thumbnails/thumbnail-3.webp" alt="">
+            </div>
+            <div class="div12">
+                <div class="div121">
+                    <img class="pr1" src="thumbnails/channel-3.jpeg" alt="">
+                </div>
+                <div class="div122">
+                    <p class="p1">
+                        Crazy Tik Toks Taken Moments Before
+                        DISASTER
+                    </p>
+                    <p class="p2">
+                        SSSniperwolf
+                    </p>
+                    <p class="p3">
+                        12M views · 1 year ago
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="div1">
+            <div class="div11">
+                <img class="img1" src="thumbnails/thumbnail-4.webp" alt="">
+            </div>
+            <div class="div12">
+                <div class="div121">
+                    <img class="pr1" src="thumbnails/channel-4.jpeg" alt="">
+                </div>
+                <div class="div122">
+                    <p class="p1">
+                        The Simplest Math Problem No One can Solve - Collatz Conjecture
+                    </p>
+                    <p class="p2">
+                        Veritasium
+                    </p>
+                    <p class="p3">
+                        18M views · 4 months ago
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="div1">
+            <div class="div11">
+                <img class="img1" src="thumbnails/thumbnail-5.webp" alt="">
+            </div>
+            <div class="div12">
+                <div class="div121">
+                    <img class="pr1" src="thumbnails/channel-5.jpeg" alt="">
+                </div>
+                <div class="div122">
+                    <p class="p1">
+                        Kadane's algorithm to Maxumum Sum Subarray problem
+                    </p>
+                    <p class="p2">
+                        CS Dojo
+                    </p>
+                    <p class="p3">
+                        519K views · 5 years ago
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="div1 ">
+            <div class="div11">
+                <img class="img1" src="thumbnails/thumbnail-6.webp" alt="">
+            </div>
+            <div class="div12">
+                <div class="div121">
+                    <img class="pr1" src="thumbnails/channel-6.jpeg" alt="">
+                </div>
+                <div class="div122">
+                    <p class="p1">
+                        Any thing you can fit In The Circle I'll pay for 
+                    </p>
+                    <p class="p2">
+                        MrBeast
+                    </p>
+                    <p class="p3">
+                        141M views · 1 year ago
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="div1">
+            <div class="div11">
+                <img class="img1" src="thumbnails/thumbnail-7.webp" alt="">
+            </div>
+            <div class="div12">
+                <div class="div121">
+                    <img class="pr1" src="thumbnails/channel-7.jpeg" alt="">
+                </div>
+                <div class="div122">
+                    <p class="p1">
+                        Talking Tech and AI with CEO Sundar pichai
+                    </p>
+                    <p class="p2">
+                        Marques brownlee
+                    </p>
+                    <p class="p3">
+                        3.4M views · 6 months ago
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="div1">
+            <div class="div11">
+                <img class="img1" src="thumbnail-a.webp" alt="">
+            </div>
+            <div class="div12">
+                <div class="div121">
+                    <img class="pr1" src="thumbnails/channel-1.jpeg" alt="">
+                </div>
+                <div class="div122">
+                    <p class="p1">
+                        Talking Tech and AI with CEO Sundar pichai
+                    </p>
+                    <p class="p2">
+                        Marques brownlee
+                    </p>
+                    <p class="p3">
+                        3.4M views · 6 months ago
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>
